@@ -13,7 +13,6 @@ jobs:
       - name: Add SSH Key
         env: 
           KEY: ${{ secrets.KEY_PEM }}
-        shell: bash
         run: |
           mkdir -p ~/.ssh
           echo "$KEY" > ~/.ssh/id_rsa
