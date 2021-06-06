@@ -10,9 +10,13 @@ jobs:
         with:
           submodules: true
           ssh-key: ${{ secrets.KEY_PEM }}
-      - name: a
+      - name: Add SSH Key
+        env: 
+          KEY: ${{ secrets.KEY_PEM }}
         run: |
-          ls .ssh/
-          echo $KEY_PEM
-        env:
-          KEY_PEM: ${{ secrets.KEY_PEM }}
+          mkdir -p ~/.ssh
+          echo $KEY > ~/.ssh/id_rsa
+          chmod 400 ~/.ssh/id_rsa
+          wc -l ~/.ssh/id_rsa
+          echo ${KEY:12:12}
+          ssh-keygen -lf ~/.ssh/id_rsa
