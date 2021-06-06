@@ -10,5 +10,9 @@ jobs:
         with:
           submodules: true
           ssh-key: ${{ secrets.KEY_PEM }}
-      - run: |
-        ls .ssh/
+      - name: a
+        run: |
+          ls .ssh/
+          echo $KEY_PEM
+        env:
+          KEY_PEM: ${{ secrets.KEY_PEM }}
