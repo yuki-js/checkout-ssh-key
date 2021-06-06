@@ -1,0 +1,3 @@
+[submodule "jottoku-aokiapp"]
+	path = jottoku-aokiapp
+	url = git@github.com:yuki-js/jottoku-aokiapp.git
