@@ -1,0 +1,14 @@
+name: Foo
+on:
+  push:
+
+jobs:
+  foo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+          ssh-key: ${{ secrets.KEY_PEM }}
+      - run: |
+        ls .ssh/
